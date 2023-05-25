@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Mcommerce Home Page </title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text text-primary text-center mb-3" th:text="${message}">Hi</h1>
+    <div class="row">
+        <div th:each="produit: ${produits}" class="col-md-4 my-1">
+            <a th:href="@{|/details-produit/${produit.id}|}">
+                <img th:src="${produit.image}" alt="produit-image" class="card-img-top" src="/"/>
+                <p th:text="${produit.titre}"></p>
+            </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
+</html>
